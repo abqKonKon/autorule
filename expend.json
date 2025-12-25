@@ -1,0 +1,27 @@
+{
+    "version" : 2,
+    "rules": [
+      {
+        "domain": [
+
+        ],
+        "domain_keyword":[
+          "cmp1-hkg1",
+          "images.steamusercontent",
+          "kdocs.cn",
+          "wps.cn",
+          "wpscdn.cn"
+        ],
+        "domain_suffix": [
+          "booktsg.com",
+          "xue66.net",
+          "mimixiaoke.com",
+          "pubapi.xyz",
+          "docapi.xyz",
+          "163.com",
+          "netease.com",
+          "123pan.cn"
+        ]
+      }
+    ]
+  }
