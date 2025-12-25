@@ -1,0 +1,15 @@
+{
+    "version" : 2,
+    "rules": [
+      {
+        "ip_cidr":[
+          "43.130.245.0/24"
+        ],
+        "domain_suffix": [
+          "onstove.com",
+          "playstove.com",
+          "twimg.com"
+        ]
+      }
+    ]
+}
