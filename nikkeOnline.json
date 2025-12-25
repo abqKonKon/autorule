@@ -1,0 +1,27 @@
+{
+    "version" : 2,
+    "rules": [
+      {
+        "domain": [
+            "global-lobby.nikke-kr.com",
+            "cloud.nikke-kr.com",
+            "sg-vas.intlgame.com",
+            "aws-na-dr.intlgame.com",
+            "data-aws-na.intlgame.com",
+            "pc.crashsight-us.iegcom.com",
+            "down.anticheatexpert",
+            "catalog.gamepass.com",
+            "na1.centauriglobal.com"
+        ],
+        "domain_suffix": [
+          "nikke-kr.com",
+          "intlgame.com",
+          "iegcom.com",
+          "anticheatexpert.com",
+          "gamepass.com",
+          "centauriglobal.com",
+          "sentry.io"
+        ]
+      }
+    ]
+  }
