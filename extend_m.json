@@ -3,12 +3,6 @@
     "rules": [
       {
         "domain_keyword":[
-          // "booktsg",
-          // "xue66",
-          // "pubapi",
-          // "docapi",
-          // "mimixiaoke",
-          // "123pan",
           "kdocs.cn",
           "wps.cn"
         ],
@@ -16,11 +10,6 @@
 
         ],
         "domain_suffix": [
-          // "booktsg.com",
-          // "xue66.net",
-          // "mimixiaoke.com",
-          // "pubapi.xyz",
-          // "docapi.xyz",
           "123pan.cn",
           "163.com",
           "netease.com"
