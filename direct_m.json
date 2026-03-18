@@ -1,0 +1,16 @@
+{
+    "version" : 2,
+    "rules": [
+      {
+        "domain_keyword":[
+          "xethub"
+        ],
+        "domain": [
+
+        ],
+        "domain_suffix": [
+          "xethub.hf.co"
+        ]
+      }
+    ]
+  }
