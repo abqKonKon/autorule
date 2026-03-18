@@ -1,0 +1,30 @@
+{
+    "version" : 2,
+    "rules": [
+      {
+        "domain_keyword":[
+          "booktsg",
+          "xue66",
+          "pubapi",
+          "docapi",
+          "mimixiaoke",
+          "123pan",
+          "kdocs.cn",
+          "wps.cn"
+        ],
+        "domain": [
+
+        ],
+        "domain_suffix": [
+          "booktsg.com",
+          "xue66.net",
+          "mimixiaoke.com",
+          "pubapi.xyz",
+          "docapi.xyz",
+          "163.com",
+          "netease.com",
+          "123pan.cn"
+        ]
+      }
+    ]
+  }
