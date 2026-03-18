@@ -7,10 +7,7 @@
         ],
         "domain_keyword":[
           "cmp1-hkg1",
-          "images.steamusercontent",
-          "kdocs.cn",
-          "wps.cn",
-          "wpscdn.cn"
+          "images.steamusercontent"
         ],
         "domain_suffix": [
           "booktsg.com",
@@ -19,8 +16,7 @@
           "pubapi.xyz",
           "docapi.xyz",
           "163.com",
-          "netease.com",
-          "123pan.cn"
+          "netease.com"
         ]
       }
     ]
