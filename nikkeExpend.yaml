@@ -1,17 +1,8 @@
 payload:
-  - DOMAIN,global-lobby.nikke-kr.com
-  - DOMAIN,cloud.nikke-kr.com
-  - DOMAIN,sg-vas.intlgame.com
-  - DOMAIN,aws-na-dr.intlgame.com
-  - DOMAIN,data-aws-na.intlgame.com
-  - DOMAIN,pc.crashsight-us.iegcom.com
-  - DOMAIN,down.anticheatexpert
-  - DOMAIN,catalog.gamepass.com
-  - DOMAIN,na1.centauriglobal.com
-  - DOMAIN-SUFFIX,nikke-kr.com
-  - DOMAIN-SUFFIX,intlgame.com
-  - DOMAIN-SUFFIX,iegcom.com
-  - DOMAIN-SUFFIX,anticheatexpert.com
-  - DOMAIN-SUFFIX,gamepass.com
-  - DOMAIN-SUFFIX,centauriglobal.com
-  - DOMAIN-SUFFIX,sentry.io
+  - nikke-kr.com
+  - intlgame.com
+  - iegcom.com
+  - anticheatexpert.com
+  - gamepass.com
+  - centauriglobal.com
+  - sentry.io
