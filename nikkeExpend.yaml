@@ -1,8 +1,8 @@
 payload:
-  - nikke-kr.com
-  - intlgame.com
-  - iegcom.com
-  - anticheatexpert.com
-  - gamepass.com
-  - centauriglobal.com
-  - sentry.io
+  - '+.nikke-kr.com'
+  - '+.intlgame.com'
+  - '+.iegcom.com'
+  - '+.anticheatexpert.com'
+  - '+.gamepass.com'
+  - '+.centauriglobal.com'
+  - '+.sentry.io'
