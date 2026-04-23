@@ -206,7 +206,7 @@ proxy-groups:
 
   # —— 地区组（filter 自动从所有订阅节点里筛选）——
   - name: "🇭🇰 香港"
-    type: url-test
+    type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -214,7 +214,7 @@ proxy-groups:
     filter: "(?i)香港|HK|HongKong|Hong\\s*Kong|🇭🇰"
 
   - name: "🇯🇵 日本"
-    type: url-test
+    type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -222,7 +222,7 @@ proxy-groups:
     filter: "(?i)日本|JP|Japan|东京|大阪|Tokyo|Osaka|🇯🇵"
 
   - name: "🇸🇬 新加坡"
-    type: url-test
+    type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -230,7 +230,7 @@ proxy-groups:
     filter: "(?i)新加坡|SG|Singapore|狮城|🇸🇬"
 
   - name: "🇺🇸 美国"
-    type: url-test
+    type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
