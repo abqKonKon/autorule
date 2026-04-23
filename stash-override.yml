@@ -113,7 +113,7 @@ rule-providers:
 # ------------------------------------------------------------
 proxy-groups:
   # —— 顶层三组 ——
-  - name: "🚀 节点选择"
+  - name: "🚀 节点选择hand"
     type: select
     proxies:
       - "⚡ 自动选择"
@@ -144,7 +144,7 @@ proxy-groups:
     type: select
     proxies:
       - "🇸🇬 新加坡"
-      - "🚀 节点选择"
+      - "🚀 节点选择hand"
       - "🇭🇰 香港"
       - "🇯🇵 日本"
       - "🇺🇸 美国"
@@ -154,7 +154,7 @@ proxy-groups:
   - name: "🎮 Steam"
     type: select
     proxies:
-      - "🚀 节点选择"
+      - "🚀 节点选择hand"
       - "🇭🇰 香港"
       - "🇯🇵 日本"
       - "🇸🇬 新加坡"
@@ -165,7 +165,7 @@ proxy-groups:
   - name: "🌐 Google"
     type: select
     proxies:
-      - "🚀 节点选择"
+      - "🚀 节点选择hand"
       - "🇭🇰 香港"
       - "🇯🇵 日本"
       - "🇸🇬 新加坡"
@@ -176,7 +176,7 @@ proxy-groups:
   - name: "🔀 代理域名"
     type: select
     proxies:
-      - "🚀 节点选择"
+      - "🚀 节点选择hand"
       - "🇭🇰 香港"
       - "🇯🇵 日本"
       - "🇸🇬 新加坡"
@@ -187,7 +187,7 @@ proxy-groups:
   - name: "✈️ Telegram"
     type: select
     proxies:
-      - "🚀 节点选择"
+      - "🚀 节点选择hand"
       - "🇭🇰 香港"
       - "🇯🇵 日本"
       - "🇸🇬 新加坡"
@@ -199,7 +199,7 @@ proxy-groups:
     type: select
     proxies:
       - "🇭🇰 香港"
-      - "🚀 节点选择"
+      - "🚀 节点选择hand"
       - "🇯🇵 日本"
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
@@ -267,4 +267,4 @@ rules:
   - RULE-SET,telegramcidr,✈️ Telegram
   - GEOIP,LAN,DIRECT,no-resolve
   - GEOIP,CN,DIRECT,no-resolve
-  - MATCH,🚀 节点选择
+  - MATCH,🚀 节点选择hand
