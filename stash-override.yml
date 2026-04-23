@@ -1,0 +1,270 @@
+# ============================================================
+# Stash Override - 从 Clash Verge custom_expend.js 迁移
+# ============================================================
+# 使用方式：
+# 1. 把此文件托管到一个可 HTTPS 访问的地址（如 GitHub raw）
+# 2. Stash → 配置 → 覆写 → 从 URL 添加
+# 3. 启用该 Override，并把优先级放在你的订阅之后
+# ============================================================
+
+name: "一体化规则 (UI 可选策略版)"
+desc: "地区分组 + 策略组 + 分流规则"
+
+# ------------------------------------------------------------
+# § 1  Rule Providers
+# ------------------------------------------------------------
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
+    path: ./ruleset/reject.yaml
+  icloud:
+    type: http
+    behavior: domain
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt
+    path: ./ruleset/icloud.yaml
+  apple:
+    type: http
+    behavior: domain
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt
+    path: ./ruleset/apple.yaml
+  steamCN:
+    type: http
+    behavior: domain
+    interval: 86400
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/steam%40cn.yaml
+    path: ./ruleset/steamCN.yaml
+  direct:
+    type: http
+    behavior: domain
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt
+    path: ./ruleset/direct.yaml
+  private:
+    type: http
+    behavior: domain
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt
+    path: ./ruleset/private.yaml
+  lancidr:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt
+    path: ./ruleset/lancidr.yaml
+  cncidr:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt
+    path: ./ruleset/cncidr.yaml
+  applications:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt
+    path: ./ruleset/applications.yaml
+
+  # 策略 Rule Providers
+  ai:
+    type: http
+    behavior: domain
+    interval: 86400
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.yaml
+    path: ./ruleset/ai.yaml
+  steam:
+    type: http
+    behavior: domain
+    interval: 86400
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/steam.yaml
+    path: ./ruleset/steam.yaml
+  google:
+    type: http
+    behavior: domain
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt
+    path: ./ruleset/google.yaml
+  proxy:
+    type: http
+    behavior: domain
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt
+    path: ./ruleset/proxy.yaml
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt
+    path: ./ruleset/telegramcidr.yaml
+  nikkeExpend:
+    type: http
+    behavior: domain
+    interval: 86400
+    url: https://raw.githubusercontent.com/abqKonKon/autorule/refs/heads/main/nikkeExpend.yaml
+    path: ./ruleset/nikkeExpend.yaml
+
+# ------------------------------------------------------------
+# § 2  Proxy Groups
+#      Stash 的 filter 字段等价于你 JS 里的正则过滤
+# ------------------------------------------------------------
+proxy-groups:
+  # —— 顶层三组 ——
+  - name: "🚀 节点选择"
+    type: select
+    proxies:
+      - "⚡ 自动选择"
+      - "🔯 故障转移"
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - DIRECT
+
+  - name: "⚡ 自动选择"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use-proxies: true
+    include-all-proxies: true
+
+  - name: "🔯 故障转移"
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    use-proxies: true
+    include-all-proxies: true
+
+  # —— 策略组 ——
+  - name: "🤖 AI"
+    type: select
+    proxies:
+      - "🇸🇬 新加坡"
+      - "🚀 节点选择"
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇺🇸 美国"
+      - DIRECT
+      - REJECT
+
+  - name: "🎮 Steam"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - DIRECT
+      - REJECT
+
+  - name: "🌐 Google"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - DIRECT
+      - REJECT
+
+  - name: "🔀 代理域名"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - DIRECT
+      - REJECT
+
+  - name: "✈️ Telegram"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - DIRECT
+      - REJECT
+
+  - name: "🪻 NikkeExpend"
+    type: select
+    proxies:
+      - "🇭🇰 香港"
+      - "🚀 节点选择"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - DIRECT
+      - REJECT
+
+  # —— 地区组（filter 自动从所有订阅节点里筛选）——
+  - name: "🇭🇰 香港"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use-proxies: true
+    include-all-proxies: true
+    filter: "(?i)香港|HK|HongKong|Hong\\s*Kong|🇭🇰"
+
+  - name: "🇯🇵 日本"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use-proxies: true
+    include-all-proxies: true
+    filter: "(?i)日本|JP|Japan|东京|大阪|Tokyo|Osaka|🇯🇵"
+
+  - name: "🇸🇬 新加坡"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use-proxies: true
+    include-all-proxies: true
+    filter: "(?i)新加坡|SG|Singapore|狮城|🇸🇬"
+
+  - name: "🇺🇸 美国"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use-proxies: true
+    include-all-proxies: true
+    filter: "(?i)美国|US|USA|United\\s*States|America|洛杉矶|纽约|硅谷|Los\\s*Angeles|New\\s*York|🇺🇸"
+
+# ------------------------------------------------------------
+# § 3  Rules
+# ------------------------------------------------------------
+rules:
+  - RULE-SET,applications,DIRECT
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  - RULE-SET,private,DIRECT
+  - RULE-SET,reject,REJECT
+  - RULE-SET,icloud,DIRECT
+  - RULE-SET,apple,DIRECT
+  - RULE-SET,steamCN,DIRECT
+  - RULE-SET,ai,🤖 AI
+  - DOMAIN,meta.com,🤖 AI
+  - RULE-SET,steam,🎮 Steam
+  - RULE-SET,nikkeExpend,🪻 NikkeExpend
+  - RULE-SET,google,🌐 Google
+  - RULE-SET,proxy,🔀 代理域名
+  - RULE-SET,direct,DIRECT
+  - RULE-SET,lancidr,DIRECT
+  - RULE-SET,cncidr,DIRECT
+  - RULE-SET,telegramcidr,✈️ Telegram
+  - GEOIP,LAN,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,🚀 节点选择
